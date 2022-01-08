@@ -1,0 +1,14 @@
+---
+version: "3"
+services:
+  portainer:
+   container_name: portainer
+   image: portainer/portainer-ce:latest
+   network_mode: media_media
+   volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /srv/server-configs/portainer/:/data
+     #- /var/lib/docker/volumes/6d4892a7cfca2f62a43485b7885aae6a014a0cdf689ce376fd6510765903061c/_data:/data
+   ports:
+     - 9000:9000/tcp
+   restart: unless-stopped
