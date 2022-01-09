@@ -4,7 +4,7 @@ services:
   portainer:
    container_name: portainer
    image: portainer/portainer-ce:latest
-   network_mode: media_media
+   network_mode: host
    volumes:
      - /var/run/docker.sock:/var/run/docker.sock
      - /srv/server-configs/portainer/:/data
